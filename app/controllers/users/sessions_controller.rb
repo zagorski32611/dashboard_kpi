@@ -8,7 +8,8 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   # def create
-  #   super
+  #   log_in user
+  #  redirect_to dashboard_url
   # end
 
   # DELETE /resource/sign_out
@@ -22,4 +23,7 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  def after_sign_in_path_for(resource)
+   dashboard_path
+  end
 end
