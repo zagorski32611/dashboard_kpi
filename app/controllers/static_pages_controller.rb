@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_action :authenticate_user!, only: [:dashboard]
+
   def home
   end
 
@@ -9,5 +11,8 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
-  end  
+  end
+
+  def dashboard
+  end
 end
