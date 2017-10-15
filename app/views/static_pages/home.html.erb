@@ -8,8 +8,11 @@
       This is the dashboard web app for AvatarFleet.
     </h2>
     <h2>
-      <%= link_to 'Sign In', new_user_session_path %>
-
+      <% if user_signed_in? %>
+        <%= link_to 'Dashboard', dashboard_path %>
+      <% else %>
+        <%= link_to 'Sign In', new_user_session_path %>
+      <% end %>
   </body>
   <%= render 'layouts/header' %>
 </html>
