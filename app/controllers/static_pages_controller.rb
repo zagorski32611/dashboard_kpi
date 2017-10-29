@@ -15,4 +15,8 @@ class StaticPagesController < ApplicationController
 
   def dashboard
   end
+
+  def happy_fox_api
+  end
+  
 end
