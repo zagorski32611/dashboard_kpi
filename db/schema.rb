@@ -12,15 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20171101001717) do
 
-  create_table "happy_foxes", force: :cascade do |t|
-    t.string "data"
-    t.string "status"
-    t.string "response"
-    t.string "user"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "hf_apis", force: :cascade do |t|
     t.string "hf_username"
     t.string "tickets"

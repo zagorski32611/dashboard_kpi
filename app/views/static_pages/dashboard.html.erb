@@ -4,7 +4,11 @@
     <section class="happy_fox">
       <h1>
         Here are the Happy Fox API calls:
-        <%= @status %>
+        <pre>
+          <%= @status.inspect %>
+          <%= @unresponded.inspect %>
+
+        </pre>
       </h1>
     </section>
   </aside>
