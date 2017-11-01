@@ -1,9 +1,10 @@
+module HappyFox_API
+
 require 'json'
 $data = File.read('/home/joe/ruby/API_Work/Tickets/Tickets.json')
 $tickets = JSON.parse($data)
 $users = $tickets["data"][3]["name"]
 
-module HappyFox_API
 # Count each status in ONE method
 def count_each_status(*statuses)
   status_counters = Hash.new(0)

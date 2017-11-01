@@ -1,0 +1,2 @@
+class HfApi < ApplicationRecord
+end
