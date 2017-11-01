@@ -21,7 +21,7 @@ module HappyFoxAPI
         status_counters[tix["status"]["name"]] += 1
       end
     end
-    return status_counters
+    puts status_counters
   end
 
   # Count tickets with and without a response
@@ -48,7 +48,7 @@ module HappyFoxAPI
             user_count[users["user"]["name"]] += 1
           end
         end
-        return user_count
+        puts user_count
     end
 
 end
