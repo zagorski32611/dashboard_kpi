@@ -2,3 +2,40 @@
 <h1>
   This is where the APIs will show up
 </h1>
+
+<div>
+  <%= @HappyFox_API.count_each_status %>
+</div>
+
+
+
+
+<% if false %>
+<div>
+    <%= form_tag wunderground_path, method: "get", class: "form-inline" do %>
+    <%= text_field_tag :city, nil, class: "form-control", placeholder: "City Name" %>
+    <%= select_tag :state, options_for_select(@states), :prompt => "Please select", class: "form-control" %>
+    <%= submit_tag "Check Weather", name: nil, class: "btn btn-primary" %>
+    <% end %>
+</div>
+
+<div>
+<% if @weather.present? %>
+  <h3><%= @weather.location %></h3>
+
+  <p>The temperature is:
+    <%= @weather.temp %></p>
+  <p>Feels like:
+    <%= @weather.feel_like %></p>
+
+  <p>
+    <%= @weather.desc %>
+    <%= image_tag @weather.icon %>
+  </p>
+  <p>
+    <%=link_to "Full Forecast", @weather.url, target: "_blank" %>
+  </p>
+</div>
+
+<% end %>
+<% end %>
