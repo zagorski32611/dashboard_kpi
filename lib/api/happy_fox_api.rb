@@ -1,10 +1,10 @@
-module HappyFox_API
+module HappyFoxAPI
   #class StaticPagesController < ApplicationController
 
   require 'httparty'
   require 'json'
 
-  def initialize()
+  def self.initialize()
     auth = { :username => 'fea750e8cae545ca89f1fcf34ab972cb',
              :password => 'e8dd80d5095540049e89f9f9f64b2b2a' }
     $tickets = HTTParty.get("http://avatarfleet.happyfox.com/api/1.1/json/tickets/?show_updates=0",
@@ -13,7 +13,7 @@ module HappyFox_API
 
   # Count each status in ONE method
 
-  def count_each_status(*statuses)
+  def self.count_each_status(*statuses)
     status_counters = Hash.new(0)
     $tickets["data"].each do |tix|
       if statuses.include?(tix["status"]["name"])
@@ -26,7 +26,7 @@ module HappyFox_API
 
   # Count tickets with and without a response
 
-  def count_unresponded(tickets)
+  def self.count_unresponded(tickets)
     true_counter = 0
     false_counter = 0
     $tickets["data"].each do |tix|
@@ -41,7 +41,7 @@ module HappyFox_API
 
   # Make a function that creates a count of tickets by user
 
-    def user_count(users)
+    def self.user_count(users)
       user_count = Hash.new(0)
       $tickets["data"].each do |users|
           if users["user"]["name"] == users["user"]["name"]
