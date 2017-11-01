@@ -1,6 +1,8 @@
 class StaticPagesController < ApplicationController
+
   before_action :authenticate_user!, only: [:dashboard]
 
+  include HappyFox_API
 
   def home
   end
@@ -18,7 +20,7 @@ class StaticPagesController < ApplicationController
   end
 
   def happy_fox_api
-    @HappyFox_API = HappyFox_API.count_each_status
+    @status = count_each_status("Closed", "On Hold", "Open", "Unanswered", "New", "Customer Review")
 
   end
 
