@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
-  require 'Hfapi'
-
+  require 'Hfapi_call'
+  
   before_action :authenticate_user!, only: [:dashboard]
 
 
@@ -20,9 +20,13 @@ class StaticPagesController < ApplicationController
   end
 
   def happy_fox_api
-    @status = HappyFoxAPI.count_each_status("Closed", "On Hold", "Open", "Unanswered", "New", "Customer Review")
-    @unresponded = HappyFoxAPI.count_unresponded(tickets)
-    @user_count = HappyFoxAPI.user_count(users)
   end
+
+  def show
+    @call = HappyFoxAPI.get_new
+    @unresponded = HappyFoxAPI.new.count_unresponded(tickets)
+    @user_count = HappyFoxAPI.new.user_count(users)
+  end
+
 
 end

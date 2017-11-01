@@ -1,4 +1,5 @@
 class HfApi < ApplicationRecord
-  include happy_fox_api
+  require "#{Rails.root}/lib/api"
+
 
 end

@@ -5,17 +5,19 @@
       <h1>
         Here are the Happy Fox API calls:
         <pre>
-          <%= @status.inspect %>
+          <%= @call.inspect %>
           <%= @unresponded.inspect %>
-
+          <%= @user_count.inspect %>
         </pre>
       </h1>
     </section>
   </aside>
 
 
-  <% if false %>
 
+
+  <% if false %>
+THIS IS FOR MY REFERENCE!
   <div class="col-md-8">
     <% if @user.microposts.any? %>
       <h3> Microposts (<%= @user.microposts.count %>)</h3>
