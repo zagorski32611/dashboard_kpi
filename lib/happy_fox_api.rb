@@ -6,6 +6,7 @@ $tickets = JSON.parse($data)
 $users = $tickets["data"][3]["name"]
 
 # Count each status in ONE method
+
 def count_each_status(*statuses)
   status_counters = Hash.new(0)
   $tickets["data"].each do |tix|
@@ -17,9 +18,8 @@ def count_each_status(*statuses)
   return status_counters
 end
 
-puts count_each_status("Closed", "On Hold", "Open", "Unanswered", "New", "Customer Review")
-
 # Count tickets with and without a response
+
 def count_unresponded(tickets)
   true_counter = 0
   false_counter = 0
@@ -32,8 +32,6 @@ def count_unresponded(tickets)
   puts "There are #{true_counter} tickets without a response"
   puts "There are #{false_counter} ticket with a response"
 end
-puts count_unresponded($data)
-
 
 # Make a function that creates a count of tickets by user
 
@@ -47,5 +45,9 @@ puts count_unresponded($data)
       return user_count
   end
 
-puts user_count($tickets)
 end
+=begin
+puts count_each_status("Closed", "On Hold", "Open", "Unanswered", "New", "Customer Review")
+puts user_count($tickets)
+puts count_unresponded($data)
+=end
