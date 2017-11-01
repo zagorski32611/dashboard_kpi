@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
 
   before_action :authenticate_user!, only: [:dashboard]
 
-  require 'lib/api/happy_fox_api.rb'
+  # include HappyFoxAPI
 
   def home
   end

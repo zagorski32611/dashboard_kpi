@@ -1,8 +1,8 @@
 module HappyFoxAPI
-  #class StaticPagesController < ApplicationController
+  # class StaticPagesController < ApplicationController
 
-  require 'httparty'
-  require 'json'
+  # require 'httparty'
+  # require 'json'
 
   def self.initialize()
     auth = { :username => 'fea750e8cae545ca89f1fcf34ab972cb',
