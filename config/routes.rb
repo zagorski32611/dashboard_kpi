@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get '/about',   to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
   get '/dashboard', to: 'static_pages#dashboard'
-  get '/happyfox', to: 'static_pages#happyfox'
+  get '/happyfox', to: 'hfapi_v1#happyfox'
 end
