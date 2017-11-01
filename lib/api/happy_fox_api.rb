@@ -1,10 +1,15 @@
 module HappyFox_API
-  class StaticPagesController < ApplicationController
+  #class StaticPagesController < ApplicationController
 
+  require 'httparty'
   require 'json'
-  $data = File.read('/home/joe/ruby/API_Work/Tickets/Tickets.json')
-  $tickets = JSON.parse($data)
-  $users = $tickets["data"][3]["name"]
+
+  def initialize()
+    auth = { :username => 'fea750e8cae545ca89f1fcf34ab972cb',
+             :password => 'e8dd80d5095540049e89f9f9f64b2b2a' }
+    $tickets = HTTParty.get("http://avatarfleet.happyfox.com/api/1.1/json/tickets/?show_updates=0",
+                             :basic_auth => auth)
+  end
 
   # Count each status in ONE method
 
