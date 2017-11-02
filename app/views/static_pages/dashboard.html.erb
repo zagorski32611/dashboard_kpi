@@ -5,61 +5,14 @@
       <h1>
         Here are the Happy Fox API calls:
         <pre>
-          <tbody>
-            <%= @tickets.count_each_status("Open") %>
-          </tbody>
+          <% @tickets['data'].each do |tix| %>
+            <%= tix %>
+            <% end %>
           </table>
         </pre>
       </h1>
+      <h3>
+        <%= @tickets %>
+      </h3>
     </section>
   </aside>
-
-  <h2>
-    <%= link_to 'happyfox', happyfox_path %>
-  </h2>
-
-
-  <% if false %>
-THIS IS FOR MY REFERENCE!
-  <div class="col-md-8">
-    <% if @user.microposts.any? %>
-      <h3> Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @micropposts %>
-    <% end %>
-  </div>
-</div>
-
-
-
-
-<div>
-    <%= form_tag wunderground_path, method: "get", class: "form-inline" do %>
-    <%= text_field_tag :city, nil, class: "form-control", placeholder: "City Name" %>
-    <%= select_tag :state, options_for_select(@states), :prompt => "Please select", class: "form-control" %>
-    <%= submit_tag "Check Weather", name: nil, class: "btn btn-primary" %>
-    <% end %>
-</div>
-
-<div>
-<% if @weather.present? %>
-  <h3><%= @weather.location %></h3>
-
-  <p>The temperature is:
-    <%= @weather.temp %></p>
-  <p>Feels like:
-    <%= @weather.feel_like %></p>
-
-  <p>
-    <%= @weather.desc %>
-    <%= image_tag @weather.icon %>
-  </p>
-  <p>
-    <%=link_to "Full Forecast", @weather.url, target: "_blank" %>
-  </p>
-</div>
-
-<% end %>
-<% end %>

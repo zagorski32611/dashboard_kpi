@@ -3,25 +3,25 @@ module HappyFoxAPI
   #require 'httparty'
 
   # require 'json'
-
+=begin
     def self.get_new()
       @auth = { :username => 'fea750e8cae545ca89f1fcf34ab972cb',
                :password => 'e8dd80d5095540049e89f9f9f64b2b2a' }
       @tickets = HTTParty.get("http://avatarfleet.happyfox.com/api/1.1/json/tickets/?show_updates=0",
-                               :basic_auth => auth)
+                               :basic_auth => @auth)
     end
-
+=end
   # Count each status in ONE method
 
-  def self.count_each_status(*statuses)
-    status_counters = Hash.new(0)
-    @tickets["data"].each do |tix|
+  def self.count_each_status(@tickets, *statuses)
+    @status_counters = Hash.new(0)
+    tickets["data"].each do |tix|
       if statuses.include?(tix["status"]["name"])
         #puts status_counters # this is cool! Run this
-        status_counters[tix["status"]["name"]] += 1
+        @status_counters[tix["status"]["name"]] += 1
       end
     end
-    puts status_counters
+    puts @status_counters
   end
 
   # Count tickets with and without a response
