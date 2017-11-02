@@ -5,15 +5,18 @@
       <h1>
         Here are the Happy Fox API calls:
         <pre>
-          <%= @call.inspect %>
-          <%= @unresponded.inspect %>
-          <%= @user_count.inspect %>
+          <tbody>
+            <%= @tickets.count_each_status("Open") %>
+          </tbody>
+          </table>
         </pre>
       </h1>
     </section>
   </aside>
 
-
+  <h2>
+    <%= link_to 'happyfox', happyfox_path %>
+  </h2>
 
 
   <% if false %>

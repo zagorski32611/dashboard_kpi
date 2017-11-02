@@ -1,0 +1,15 @@
+<h1> Here's the good shit </h1>
+
+<table>
+  <tr>
+    <th> Stuff </th>
+  </tr>
+
+<tbody>
+  <% @tickets.each do |ticket| %>
+    <tr>
+      <td><%= ticket["data"] %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
