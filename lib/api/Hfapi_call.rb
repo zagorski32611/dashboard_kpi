@@ -13,7 +13,7 @@ module HappyFoxAPI
 =end
   # Count each status in ONE method
 
-  def self.count_each_status(@tickets, *statuses)
+  def self.count_each_status(tickets, *statuses)
     @status_counters = Hash.new(0)
     tickets["data"].each do |tix|
       if statuses.include?(tix["status"]["name"])

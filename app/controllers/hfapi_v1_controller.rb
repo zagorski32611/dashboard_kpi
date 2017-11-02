@@ -9,7 +9,7 @@ class Hfapi_v1_Controller < ApplicationController
     #format :json
     @auth = { :username => 'fea750e8cae545ca89f1fcf34ab972cb',
              :password => 'e8dd80d5095540049e89f9f9f64b2b2a' }
-    @tickets = HTTParty.get("http://avatarfleet.happyfox.com/api/1.1/json/tickets/?show_updates=0",
+    @tickets = HTTParty.get("http://avatarfleet.happyfox.com/api/1.1/json/tickets/?size=50&page=1",
                              :basic_auth => auth, :headers =>{'Content-Type' => 'application/json'} )
     @counters = show("On Hold", "Open")
   end
