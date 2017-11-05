@@ -7,9 +7,21 @@
       </h1>
         <pre>
           <%= @tickets['data'].each do |tix| %>
-          <%= tix %>
+          <%= tix['status']['name'] %>
           <% end %>
         </pre>
       </section>
     </aside>
   </div>
+
+<div class='row'>
+  <aside class='col-md-4'>
+    <h1>
+      Here are the controller methods
+    </h1>
+    <pre>
+      <%= @counters %>
+      <%= @unresponded %>
+    </pre>
+  </aside>
+</div>
