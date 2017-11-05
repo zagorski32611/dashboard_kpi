@@ -4,15 +4,12 @@
     <section class="happy_fox">
       <h1>
         Here are the Happy Fox API calls:
-        <pre>
-          <% @tickets['data'].each do |tix| %>
-            <%= tix %>
-            <% end %>
-          </table>
-        </pre>
       </h1>
-      <h3>
-        <%= @counter %>
-      </h3>
-    </section>
-  </aside>
+        <pre>
+          <%= @tickets['data'].each do |tix| %>
+          <%= tix %>
+          <% end %>
+        </pre>
+      </section>
+    </aside>
+  </div>

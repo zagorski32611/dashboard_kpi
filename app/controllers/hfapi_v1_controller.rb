@@ -22,7 +22,7 @@ class Hfapi_v1_Controller < ApplicationController
           @status_counters[tix["status"]["name"]] += 1
         end
       end
-      @status_counters
+      puts @status_counters
     end
 
   def destroy_session
