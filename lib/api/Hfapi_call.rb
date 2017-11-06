@@ -16,12 +16,13 @@ module HappyFoxAPI
   def self.count_each_status(tickets, *statuses)
     @status_counters = Hash.new(0)
     @tickets['data'].each do |tix|
-      if statuses.include?(tix['status']['name'])
-        #puts status_counters # this is cool! Run this
-        @status_counters[tix[0][1]] += 1
+      if (status_counters[tix['status']['name'].exists?)
+        status_counters[tix['status']['name']] += 1
+      else
+        status_counters[tix['status']['name']] = 1
       end
     end
-    @status_counters
+     return @status_counters
   end
 
   # Count tickets with and without a response

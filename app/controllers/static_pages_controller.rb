@@ -25,10 +25,16 @@ class StaticPagesController < ApplicationController
                              :basic_auth => @auth, :headers =>{'Content-Type' => 'application/json'})
     @tickets = JSON.parse(@data.body)
 
+    #@counters = HappyFoxAPI.count_each_status(@tickets, "Open", "New", "Closed", "On Hold", "Unanswered")
+
+    #@unresponded = HappyFoxAPI.count_unresponded(@tickets) # doesn't work
+
+  end
+
+  def show
     @counters = HappyFoxAPI.count_each_status(@tickets, "Open", "New", "Closed", "On Hold", "Unanswered")
 
-    @unresponded = HappyFoxAPI.count_unresponded(@tickets) # doesn't work
-
+    #@unresponded = HappyFoxAPI.count_unresponded(@tickets) # doesn't work
   end
 
 end
