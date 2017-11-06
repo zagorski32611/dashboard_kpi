@@ -14,11 +14,34 @@
 
 <div class='row'>
   <aside class='col-md-4'>
-    <h1>
-      Here are the controller methods
-    </h1>
+    <h4>
+      Count each status:
+    </h4>
     <pre>
       <%= show(@tickets, "Open", "New", "Closed", "On Hold", "Unanswered") %>
+    </pre>
+  </aside>
+</div>
+
+<div class='row'>
+  <aside class='col-md-4'>
+    <h4>
+      Unresponded Tickets:
+    </h4>
+    <pre>
+      <%= count_unresponded(@tickets) %>
+    </pre>
+  </aside>
+</div>
+
+
+<div class='row'>
+  <aside class='col-md-4'>
+    <h4>
+      Unresponded Tickets:
+    </h4>
+    <pre>
+      <%= user_count(@tickets) %>
     </pre>
   </aside>
 </div>
