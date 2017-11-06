@@ -1,17 +1,8 @@
 <%= render 'layouts/header' %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="happy_fox">
-      <h1>
-        Here are the Happy Fox API calls:
-      </h1>
-      <pre>
-
-      </pre>
-      </section>
-    </aside>
-  </div>
-
+<div class='center'>
+  <h3>
+    <b> HappyFox at a glance: </b>
+  </h3>
 <div class='row'>
   <aside class='col-md-4'>
     <h4>
@@ -38,7 +29,7 @@
 <div class='row'>
   <aside class='col-md-4'>
     <h4>
-      Unresponded Tickets:
+      Ticket Count by Client: 
     </h4>
     <pre>
       <%= user_count(@tickets) %>
