@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
   include HappyFoxAPI
   require 'httparty'
   require 'json'
+  helper :all
   before_action :authenticate_user!, only: [:dashboard]
 
 
@@ -31,10 +32,19 @@ class StaticPagesController < ApplicationController
 
   end
 
-  def show
-    @counters = HappyFoxAPI.count_each_status(@tickets, "Open", "New", "Closed", "On Hold", "Unanswered")
-
-    #@unresponded = HappyFoxAPI.count_unresponded(@tickets) # doesn't work
+  def show(tickets, *statuses)
+    @status_counters = Hash.new(0)
+    @tickets['data'].each do |tix|
+      if statuses.include?(tix["status"]["name"])
+        #puts status_counters # this is cool! Run this
+        @status_counters[tix["status"]["name"]] += 1
+      end
+    end
+     return @status_counters
   end
+  helper_method :show
+    #@counters = HappyFoxAPI.count_each_status(@tickets, "Open", "New", "Closed", "On Hold", "Unanswered")
+    #@unresponded = HappyFoxAPI.count_unresponded(@tickets) # doesn't work
+
 
 end

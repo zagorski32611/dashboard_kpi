@@ -16,10 +16,10 @@ module HappyFoxAPI
   def self.count_each_status(tickets, *statuses)
     @status_counters = Hash.new(0)
     @tickets['data'].each do |tix|
-      if (status_counters[tix['status']['name'].exists?)
-        status_counters[tix['status']['name']] += 1
+      if (@status_counters[tix['status']['name'].exists?)
+        @status_counters[tix['status']['name']] += 1
       else
-        status_counters[tix['status']['name']] = 1
+        @status_counters[tix['status']['name']] = 1
       end
     end
      return @status_counters
