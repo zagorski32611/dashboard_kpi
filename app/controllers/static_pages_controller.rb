@@ -28,7 +28,7 @@ class StaticPagesController < ApplicationController
 
   def show(tickets, *statuses)
     @status_counters = Hash.new(0)
-    @tickets['data'].each do |tix|
+    @tickets["data"].each do |tix|
       if statuses.include?(tix["status"]["name"])
         #puts status_counters # this is cool! Run this
         @status_counters[tix["status"]["name"]] += 1
