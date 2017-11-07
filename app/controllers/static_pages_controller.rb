@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   include HappyFoxAPI
   require 'httparty'
   require 'json'
-  helper :all
+
   before_action :authenticate_user!, only: [:dashboard]
 
 
@@ -62,8 +62,5 @@ class StaticPagesController < ApplicationController
       return user_count
   end
   helper_method :user_count
-
-
-
 
 end
