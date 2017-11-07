@@ -4,11 +4,11 @@
     <b> HappyFox at a glance: </b>
   </h3>
 </div>
-<div class='w3-container'>
+<div class='w3-container center'>
   <h4>
-    Count each status:
+    <b>Count each status:</b>
   </h4>
-    <table>
+    <table class="box">
       <% show(@tickets, "Open", "New", "Closed", "On Hold", "Unanswered", "Customer Review").each do |show_status , show_count| %>
       <tr>
         <td><%= show_status %></td>
@@ -18,11 +18,11 @@
     </table>
 </div>
 
-<div class='w3-container'>
+<div class='w3-container center'>
   <h4>
     Unresponded Tickets:
   </h4>
-  <table>
+  <table class="box">
     <tr>
       <%= count_unresponded(@tickets) %>
     </tr>
@@ -30,11 +30,11 @@
 </div>
 
 
-<div class='w3-container'>
+<div class='w3-container center'>
   <h4>
     Ticket Count by Client:
   </h4>
-  <table>
+  <table class="box">
     <% user_count(@tickets).each do |user_name , user_total| %>
     <tr>
       <td><%= user_name %></td>
