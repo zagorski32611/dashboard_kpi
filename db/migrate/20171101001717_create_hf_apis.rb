@@ -13,4 +13,5 @@ class CreateHfApis < ActiveRecord::Migration[5.1]
       options.merge!({:basic_auth => @auth})
       self.class.get('#{base_uri}/tickets/?show_updates=0')
     end
+  end
 end
